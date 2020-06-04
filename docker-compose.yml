@@ -12,6 +12,7 @@ services:
       - "${HOME}/.caddy:/data"
       - "./config/Caddyfile:/etc/caddy/Caddyfile"
       - "./www:/www"
+    network_mode: bridge
     links:
       - v2ray
   v2ray:
@@ -20,3 +21,19 @@ services:
     restart: always
     volumes:
       - "./config/config.json:/etc/v2ray/config.json"
+    network_mode: bridge
+  ipv6nat:
+    image: robbertkl/ipv6nat
+    container_name: ipv6nat
+    network_mode: host
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+      - SYS_MODULE
+    cap_drop:
+      - ALL
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "/lib/modules:/lib/modules:ro"
+
