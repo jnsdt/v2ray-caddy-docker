@@ -67,7 +67,7 @@ def generate_vmess():
     s = json.dumps(j)
     vmess = 'vmess://' + base64.b64encode(s.encode('utf8')).decode('utf8')
     with open(V2RAY_VMESS_PATH, 'w+') as f:
-        f.write(vmess)
+        f.write(vmess + '\n')
     return vmess
 
 

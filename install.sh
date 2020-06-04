@@ -1,4 +1,5 @@
 # Install dependencies
+sudo apt update
 sudo apt install -y wget git python3
 
 # Install docker
@@ -24,6 +25,12 @@ install_bbr() {
 git clone https://github.com/xunge2020/v2ray-caddy-docker
 cd v2ray-caddy-docker
 
+echo '\n========================================'
+echo   '|  Now follow the instructions below   |'
+echo   '========================================\n'
 echo 'cd v2ray-caddy-docker'
 echo 'python3 go.py --domain <your_domain>'
 echo 'docker-compose up -d'
+echo 'cat config/vmess.txt'
+echo './tcp.sh  # turn on bbr (optional)'
+echo '\n'
