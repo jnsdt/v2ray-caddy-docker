@@ -21,13 +21,13 @@ install_bbr() {
 
 [[ -f "/usr/bin/docker" ]] || install_docker
 [[ -f "/usr/local/bin/docker-compose" ]] || install_docker_compose
-
 git clone https://github.com/xunge2020/v2ray-caddy-docker
-cd v2ray-caddy-docker
+install_bbr
 
 echo -e '\n\n========================================'
 echo -e     '|  Now follow the instructions below   |'
 echo -e     '========================================\n'
+echo -e 'cd v2ray-caddy-docker'
 echo -e 'python3 go.py --domain <your_domain>'
 echo -e 'docker-compose up -d'
 echo -e 'cat config/vmess.txt'
