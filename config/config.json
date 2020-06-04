@@ -1,4 +1,7 @@
 {
+  "log": {
+    "level": "warning"
+  },
   "inbounds": [
     {
       "port": 10086,
@@ -22,8 +25,7 @@
   "outbounds": [
     {
       "protocol": "freedom",
-      "settings": {},
-      "tag": "direct"
+      "settings": {}
     }
   ]
 }
