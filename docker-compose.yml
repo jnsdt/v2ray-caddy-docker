@@ -1,6 +1,24 @@
 version: "3"
 
 services:
+  # caddy-cloudflare:
+  #   build: caddy-cloudflare
+  #   container_name: caddy-cloudflare
+  #   restart: always
+  #   ports:
+  #     - "80:80"
+  #     - "443:443"
+  #   volumes:
+  #     - "${HOME}/.caddy:/data"
+  #     - "./config/Caddyfile:/etc/caddy/Caddyfile"
+  #     - "./www:/www"
+  #   network_mode: bridge
+  #   links:
+  #     - v2ray
+  #   environment:
+  #     CLOUDFLARE_EMAIL:
+  #     CLOUDFLARE_API_TOKEN:
+  #     ACME_AGREE: "true"
   caddy:
     image: caddy
     container_name: caddy

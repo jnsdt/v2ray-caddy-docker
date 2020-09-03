@@ -1,6 +1,6 @@
 # Install dependencies
 sudo apt update
-sudo apt install -y git python3
+sudo apt install -y git python3 curl
 
 # Install docker
 install_docker() {
@@ -10,13 +10,13 @@ install_docker() {
 
 # Install docker-compose
 install_docker_compose() {
-    sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    sudo curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
     sudo chmod +x /usr/local/bin/docker-compose
 }
 
 # Install bbr script
 install_bbr() {
-    wget -N --no-check-certificate "https://github.com/ylx2016/Linux-NetSpeed/releases/download/sh/tcp.sh" && chmod +x tcp.sh
+    wget -N "https://github.000060000.xyz/tcp.sh" && chmod +x tcp.sh
 }
 
 [[ -f "/usr/bin/docker" ]] || install_docker

@@ -15,6 +15,7 @@ Follow the instructions to complete
 To update v2ray-core simply run
 
 ```
+docker pull v2fly/v2fly-core
 docker-compose up --force-recreate --build -d
 docker image prune -f
 ```
